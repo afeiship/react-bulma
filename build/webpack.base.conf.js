@@ -1,15 +1,15 @@
-var path = require('path')
-var webpack = require('webpack')
-var config = require('../config')
-var utils = require('./utils')
-var env = process.env.NODE_ENV;
+const path = require('path');
+const webpack = require('webpack');
+const config = require('../config');
+const utils = require('./utils');
+const env = process.env.NODE_ENV;
 
   // check env & config/index.js to decide weither to enable CSS Sourcemaps for the
-  // various preprocessor loaders added to vue-loader at the end of this file
-var cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap)
-var cssSourceMapProd = (env === 'production' && config.build.productionSourceMap)
-var useCssSourceMap = cssSourceMapDev || cssSourceMapProd;
-var externals = process.env.NODE_ENV === 'production' ? {
+  // constious preprocessor loaders added to vue-loader at the end of this file
+const cssSourceMapDev = (env === 'development' && config.dev.cssSourceMap);
+const cssSourceMapProd = (env === 'production' && config.build.productionSourceMap);
+const useCssSourceMap = cssSourceMapDev || cssSourceMapProd;
+const externals = process.env.NODE_ENV === 'production' ? {
   react: 'react',
   classnames: 'classnames',
   'react-dom': 'react-dom',
@@ -34,7 +34,8 @@ module.exports = {
       ReactDOM: path.resolve(__dirname, '../node_modules/react-dom'),
       'src': path.resolve(__dirname, '../src'),
       'assets': path.resolve(__dirname, '../src/assets'),
-      'components': path.resolve(__dirname, '../src/components')
+      'components': path.resolve(__dirname, '../src/components'),
+      'node_modules': path.resolve(__dirname, '../src/node_modules')
     }
   },
   plugins:[
@@ -56,7 +57,7 @@ module.exports = {
       test: /\.css$/,
       loader: 'style-loader!css-loader!autoprefixer-loader',
     },  {
-      test: /\.scss$/,
+      test: /\.(scss|sass)$/,
       loader: 'style-loader!css-loader!autoprefixer-loader!sass-loader'
     }, {
       test: /\.(gif|jpg|png)\??.*$/,
