@@ -50,3 +50,9 @@ export const narrows = [
   'narrow-tablet',
   'narrow-desktop'
 ];
+
+export const tiles = [
+  'ancestor',
+  'parent',
+  'child'
+];

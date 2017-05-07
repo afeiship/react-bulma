@@ -7,6 +7,10 @@ export default class extends React.PureComponent {
     className: PropTypes.string,
     gapless: PropTypes.bool,
     multiline: PropTypes.bool,
+    ancestor: PropTypes.bool,
+    parent: PropTypes.bool,
+    child: PropTypes.bool,
+    vertical: PropTypes.bool,
     is: PropTypes.oneOfType([
       PropTypes.string,
       PropTypes.array
@@ -26,7 +30,10 @@ export default class extends React.PureComponent {
   }
 
   render() {
-    const {children, is, className, gapless, multiline, ...props} = this.props;
+    const {
+      children, is, className,
+      gapless, multiline, ancestor, parent, child, vertical, ...props
+    } = this.props;
     return (
       <div
         {...props}
@@ -36,7 +43,11 @@ export default class extends React.PureComponent {
             this.getIsClassName(),
             {
               'is-multiline': multiline,
-              'is-gapless': gapless
+              'is-gapless': gapless,
+              'is-ancestor': ancestor,
+              'is-parent': parent,
+              'is-child': child,
+              'is-vertical': vertical,
             }
             , className)
         }>{children}</div>
