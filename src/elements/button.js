@@ -49,6 +49,7 @@ export default class extends PureComponent {
       large, medium, normal, small,
       outlined, inverted, hovered, focused, active, link, loading, ...props
     } = this.props;
+
     return React.createElement(nodeName, {
       className: classNames('button', `is-${theme}`, {
         'is-large': large,
@@ -64,7 +65,7 @@ export default class extends PureComponent {
         'is-loading': loading
       }, className),
       children,
-      ...children
+      ...props
     })
   }
 

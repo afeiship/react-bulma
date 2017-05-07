@@ -6,22 +6,26 @@ import classNames from 'classnames';
 export default class extends PureComponent {
   static propTypes = {
     className: PropTypes.string,
-    is: PropTypes.oneOf([
-      'success',
+    theme: PropTypes.oneOf([
+      'white',
+      'light',
+      'dark',
+      'black',
+      'primary',
       'info',
+      'success',
       'warning',
-      'danger'
-    ])
+      'danger',
+    ]),
   };
 
   static defaultProps = {
-    is: 'success'
   };
 
   render() {
-    const {className, is, children, ...props} = this.props;
+    const {className, theme, children, ...props} = this.props;
     return (
-      <div {...props} className={classNames('notification', `is-${is}`, className)}>
+      <div {...props} className={classNames('notification', `is-${theme}`, className)}>
         {children}
       </div>
     );
