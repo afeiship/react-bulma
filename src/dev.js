@@ -19,7 +19,11 @@ import {
   Title,
   Message,
   MessageBody,
-  MessageHeader
+  MessageHeader,
+  Level,
+  LevelLeft,
+  LevelRight,
+  LevelItem
 } from './main';
 
 
@@ -242,6 +246,12 @@ class App extends React.Component {
             Only a poor body!
           </MessageBody>
         </Message>
+
+
+        <Level>
+          <LevelLeft>levet</LevelLeft>
+          <LevelRight>levet</LevelRight>
+        </Level>
 
 
       </div>

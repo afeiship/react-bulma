@@ -22,6 +22,12 @@ import Message from './components/message/message';
 import MessageHeader from './components/message/header';
 import MessageBody from './components/message/body';
 
+//level:
+import Level from './components/level/level';
+import LevelLeft from './components/level/level-left';
+import LevelRight from './components/level/level-right';
+import LevelItem from './components/level/level-item';
+
 
 export {
   Columns,
@@ -42,5 +48,10 @@ export {
 
   Message,
   MessageHeader,
-  MessageBody
+  MessageBody,
+
+  Level,
+  LevelLeft,
+  LevelRight,
+  LevelItem
 };

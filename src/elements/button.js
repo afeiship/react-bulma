@@ -39,11 +39,11 @@ export default class extends PureComponent {
   };
 
   static defaultProps = {
-    nodeName: 'a'
+    nodeName: 'button'
   };
 
 
-  getChildren() {
+  get children() {
     const {
       className, children, theme, nodeName,
       large, medium, normal, small,
@@ -70,6 +70,6 @@ export default class extends PureComponent {
   }
 
   render() {
-    return this.getChildren();
+    return this.children;
   }
 }
